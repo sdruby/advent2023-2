@@ -17,6 +17,12 @@ class GameChecker
   def sum_of_valid_game_ids
     valid_games.map(&:id).sum
   end
+
+  def sum_of_powers
+    @parser.games.map(&:power).sum
+  end
 end
 
-puts "The answer is: #{GameChecker.new.sum_of_valid_game_ids}"
+gc = GameChecker.new
+puts "The answer is: #{gc.sum_of_valid_game_ids}"
+puts "The sum of powers is #{gc.sum_of_powers}"

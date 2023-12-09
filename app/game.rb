@@ -20,4 +20,14 @@ class Game
       pull.valid?(max_pull)
     end
   end
+
+  def power
+    minimum(:red) * minimum(:green) * minimum(:blue)
+  end
+
+  # the smallest valid set, is the largest number of cubes for a given color in that set
+  # for each color
+  def minimum(color)
+    pulls.map(&color).max
+  end
 end
